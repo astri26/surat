@@ -1,5 +1,17 @@
 @extends('master')
 @section('content')
+
+@if (session('success'))
+<!-- MAKA TAMPILKAN ALERT SUCCESS -->
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
+<!-- KETIKA ADA SESSION ERROR  -->
+@if (session('error'))
+<!-- MAKA TAMPILKAN ALERT DANGER -->
+    <div class="alert alert-danger">{{ session('error') }}</div>
+@endif
+
 <section class="section">
     <div class="section-body">
     <div class="row">
@@ -50,7 +62,7 @@
                     <td>{{ $pndk->kewarganegaraan }}</td>
                     <td>
                         <a href="{{ url('/penduduk/'.$pndk->id_penduduk.'/edit') }}" class="on-default edit-row btn btn-primary" ><i class="fa fa-edit"></i></a>
-                        <form action="" method="post" class="d-inline">
+                        <form action="{{ url('/penduduk/'.$pndk->id_penduduk) }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
                             <button class="on-default edit-row btn btn-danger" onclick="return confirm('Apakah anda yakin akan menghapus nya?');" ><i class="fa fa-trash"></i></button>

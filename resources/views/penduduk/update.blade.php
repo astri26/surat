@@ -49,9 +49,9 @@
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" placeholder="Jenis Kelamin"> -->
                             <select class="form-control select2" id="jenis_kelamin" name="jenis_kelamin" placeholder="Jenis Kelamin" value="{{ $penduduk->jenis_kelamin }}" required>
-                                <option value selected="selected">-- Jenis Kelamin --</option>    
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
+                                <option value selected="selected">-- Jenis Kelamin --</option>
+                                <option value="Laki-laki" {{ $penduduk->jenis_kelamin == 'Laki-laki' ? 'selected' : '' }} >Laki-laki</option>
+                                <option value="Perempuan" {{ $penduduk->jenis_kelamin == 'Perempuan' ? 'selected' : '' }} >Perempuan</option>
                             </select>
                         </div>
                     </div>
@@ -65,14 +65,14 @@
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Agama</label>
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="agama" name="agama" placeholder="Agama"> -->
-                                    
+
                             <select class="form-control select2" id="agama" name="agama" placeholder="Agama" value="{{ $penduduk->agama }}" required>
-                                <option value selected="selected">-- Agama --</option>    
-                                <option>Islam</option>
-                                <option>Kristen</option>
-                                <option>Katholik</option>
-                                <option>Hindu</option>
-                                <option>Budha</option>
+                                <option value selected="selected">-- Agama --</option>
+                                <option value="Islam" {{ $penduduk->agama == 'Islam' ? 'selected' : '' }} >Islam</option>
+                                <option value="Kristen" {{ $penduduk->agama == 'Kristen' ? 'selected' : '' }} >Kristen</option>
+                                <option value="Katholik" {{ $penduduk->agama == 'Katholik' ? 'selected' : '' }} >Katholik</option>
+                                <option value="Hindu" {{ $penduduk->agama == 'Hindu' ? 'selected' : '' }} >Hindu</option>
+                                <option value="Budha" {{ $penduduk->agama == 'Budha' ? 'selected' : '' }} >Budha</option>
                             </select>
                         </div>
                     </div>
@@ -81,9 +81,9 @@
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="status_perkawinan" name="status_perkawinan" placeholder="Status Perkawinan"> -->
                             <select class="form-control select2" id="status_perkawinan" name="status_perkawinan" placeholder="Status Perkawinan" value="{{ $penduduk->status_perkawinan }}" required>
-                                <option value selected="selected">-- Status Perkawinan --</option>    
-                                <option>Kawin</option>
-                                <option>Belum Kawin</option>
+                                <option value selected="selected">-- Status Perkawinan --</option>
+                                <option value="Kawin" {{ $penduduk->status_perkawinan == 'Kawin' ? 'selected' : '' }} >Kawin</option>
+                                <option value="Belum Kawin" {{ $penduduk->status_perkawinan == 'Belum Kawin' ? 'selected' : '' }} >Belum Kawin</option>
                             </select>
                         </div>
                     </div>
@@ -92,18 +92,18 @@
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="status_hubungan" name="status_hubungan" placeholder="Status Hubungan"> -->
                             <select class="form-control select2" id="status_hubungan" name="status_hubungan" placeholder="Status Hubungan" value="{{ $penduduk->status_hubungan }}" required>
-                                <option value selected="selected">-- Status Hubungan --</option>    
-                                <option>Kepala Keluarga</option>
-                                <option>Suami</option>   
-                                <option>Istri</option>
-                                <option>Anak</option>   
-                                <option>Menantu</option>
-                                <option>Cucu</option>   
-                                <option>Orang Tua</option>
-                                <option>Mertua</option>
-                                <option>Famili Lain</option>
-                                <option>Pembantu</option>
-                                <option>Lainnya</option>
+                                <option value selected="selected">-- Status Hubungan --</option>
+                                <option value="Kepala-Keluarga" {{ $penduduk->status_hubungan == 'Kepala-Keluarga' ? 'selected' : '' }} >Kepala-Keluarga</option>
+                                <option value="Suami" {{ $penduduk->status_hubungan == 'Suami' ? 'selected' : '' }} >Suami</option>
+                                <option value="Istri" {{ $penduduk->status_hubungan == 'Istri' ? 'selected' : '' }} >Istri</option>
+                                <option value="Anak" {{ $penduduk->status_hubungan == 'Anak' ? 'selected' : '' }} >Anak</option>
+                                <option value="Menantu" {{ $penduduk->status_hubungan == 'Menantu' ? 'selected' : '' }} >Menantu</option>
+                                <option value="Cucu" {{ $penduduk->status_hubungan == 'Cucu' ? 'selected' : '' }} >Cucu</option>
+                                <option value="Orang-Tua" {{ $penduduk->status_hubungan == 'Orang-Tua' ? 'selected' : '' }} >Orang Tua</option>
+                                <option value="Mertua" {{ $penduduk->status_hubungan == 'Mertua' ? 'selected' : '' }} >Mertua</option>
+                                <option value="Famili-Lain" {{ $penduduk->status_hubungan == 'Famili-Lain' ? 'selected' : '' }} >Famili Lain</option>
+                                <option value="Pembantu" {{ $penduduk->status_hubungan == 'Pembantu' ? 'selected' : '' }} >Pembantu</option>
+                                <option value="Lainnya" {{ $penduduk->status_hubungan == 'Lainnya' ? 'selected' : '' }} >Lainnya</option>
                             </select>
                         </div>
                     </div>

@@ -37,7 +37,7 @@ class PendudukController extends Controller
     public function store(Request $request)
     {
         Penduduk::create($request->all());
-        return redirect('penduduk');
+        return redirect('penduduk')->with(['success' => 'Data Penduduk Berhasil Ditambahkan!']);
     }
 
     /**
@@ -87,7 +87,7 @@ class PendudukController extends Controller
                 'pekerjaan' => $request->pekerjaan,
                 'kewarganegaraan' => $request->kewarganegaraan
             ]);
-        return redirect('/penduduk');
+        return redirect('/penduduk')->with(['success' => 'Data Pelanggan Berhasil Diubah!']);
     }
 
     /**
@@ -98,6 +98,7 @@ class PendudukController extends Controller
      */
     public function destroy(Penduduk $penduduk)
     {
-        //
+        Penduduk::destroy($penduduk->id_penduduk);
+        return redirect('/penduduk')->with(['success' => 'Data Penduduk Berhasil Dihapus!']);
     }
 }

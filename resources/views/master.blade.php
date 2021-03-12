@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{url('otika/assets/css/custom.css')}}">
   <link rel='shortcut icon' type='image/x-icon' href="{{url('otika/assets/img/favicon.ico')}}"/>
 
-  
+
   <link rel="stylesheet" href="{{url('otika/assets/bundles/select2/dist/css/select2.min.css')}}">
 </head>
 
@@ -171,7 +171,7 @@
                 Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a  href="{{ route('logout') }}" onclick="event.preventDefault(); 
+              <a  href="{{ route('logout') }}" onclick="event.preventDefault();
               document.getElementById('logout-form').submit();" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
               {{ __('Logout') }}
               </a>
@@ -201,10 +201,10 @@
                 <li><a class="nav-link" href="{{url('/penduduk')}}">Data Penduduk</a></li>
               </ul>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{url('/penduduk')}}">Data Keluarga</a></li>
+                <li><a class="nav-link" href="{{url('/keluarga')}}">Data Keluarga</a></li>
               </ul>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{url('/penduduk')}}">Data Dusun</a></li>
+                <li><a class="nav-link" href="{{url('/dusun')}}">Data Dusun</a></li>
               </ul>
             </li>
             <li class="menu-header">Surat</li>
@@ -244,7 +244,7 @@
                 <li><a class="nav-link" href="tabs.html">Tab</a></li>
               </ul>
             </li>
-            <li class="menu-header">Media</li>
+            {{-- <li class="menu-header">Media</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="image"></i><span>Gallery</span></a>
               <ul class="dropdown-menu">
@@ -262,14 +262,14 @@
             <li><a class="nav-link" href="vector-map.html"><i data-feather="map-pin"></i><span>Vector
                   Map</span></a></li>
               </ul>
-            </li>
+            </li> --}}
           </ul>
         </aside>
       </div>
       <!-- Main Content -->
       <div class="main-content">
           @yield('content')
-        
+
         <div class="settingSidebar">
           <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
           </a>
@@ -383,7 +383,7 @@
   <script src="{{url('otika/assets/bundles/datatables/export-tables/pdfmake.min.js')}}"></script>
   <script src="{{url('otika/assets/bundles/datatables/export-tables/vfs_fonts.js')}}"></script>
   <script src="{{url('otika/assets/bundles/datatables/export-tables/buttons.print.min.js')}}"></script>
-  <script src="{{url('otika/assets/js/page/datatables.js')}}"></script>  
+  <script src="{{url('otika/assets/js/page/datatables.js')}}"></script>
   <script src="{{url('otika/assets/bundles/select2/dist/js/select2.full.min.js')}}"></script>
   <!-- Template JS File -->
   <script src="{{url('otika/assets/js/scripts.js')}}"></script>

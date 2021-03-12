@@ -47,9 +47,9 @@
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" placeholder="Jenis Kelamin"> -->
                             <select class="form-control select2" id="jenis_kelamin" name="jenis_kelamin" placeholder="Jenis Kelamin" required>
-                                <option value selected="selected">-- Jenis Kelamin --</option>    
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
+                                <option value selected="selected">-- Jenis Kelamin --</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
                             </select>
                         </div>
                     </div>
@@ -63,14 +63,14 @@
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Agama</label>
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="agama" name="agama" placeholder="Agama"> -->
-                                    
+
                             <select class="form-control select2" id="agama" name="agama" placeholder="Agama" required>
-                                <option value selected="selected">-- Agama --</option>    
-                                <option>Islam</option>
-                                <option>Kristen</option>
-                                <option>Katholik</option>
-                                <option>Hindu</option>
-                                <option>Budha</option>
+                                <option value selected="selected">-- Agama --</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Katholik">Katholik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
                             </select>
                         </div>
                     </div>
@@ -79,9 +79,9 @@
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="status_perkawinan" name="status_perkawinan" placeholder="Status Perkawinan"> -->
                             <select class="form-control select2" id="status_perkawinan" name="status_perkawinan" placeholder="Status Perkawinan" required>
-                                <option value selected="selected">-- Status Perkawinan --</option>    
-                                <option>Kawin</option>
-                                <option>Belum Kawin</option>
+                                <option value selected="selected">-- Status Perkawinan --</option>
+                                <option value="Kawin">Kawin</option>
+                                <option value="Belum Kawin">Belum Kawin</option>
                             </select>
                         </div>
                     </div>
@@ -90,18 +90,18 @@
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="status_hubungan" name="status_hubungan" placeholder="Status Hubungan"> -->
                             <select class="form-control select2" id="status_hubungan" name="status_hubungan" placeholder="Status Hubungan" required>
-                                <option value selected="selected">-- Status Hubungan --</option>    
-                                <option>Kepala Keluarga</option>
-                                <option>Suami</option>   
-                                <option>Istri</option>
-                                <option>Anak</option>   
-                                <option>Menantu</option>
-                                <option>Cucu</option>   
-                                <option>Orang Tua</option>
-                                <option>Mertua</option>
-                                <option>Famili Lain</option>
-                                <option>Pembantu</option>
-                                <option>Lainnya</option>
+                                <option value selected="selected">-- Status Hubungan --</option>
+                                <option value="Kepala-Keluarga">Kepala Keluarga</option>
+                                <option value="Suami">Suami</option>
+                                <option value="Istri">Istri</option>
+                                <option value="Anak">Anak</option>
+                                <option value="Menantu">Menantu</option>
+                                <option value="Cucu">Cucu</option>
+                                <option value="Orang-Tua">Orang Tua</option>
+                                <option value="Mertua">Mertua</option>
+                                <option value="Famili-Lain">Famili Lain</option>
+                                <option value="Pembantu">Pembantu</option>
+                                <option value="Lainnya">Lainnya</option>
                             </select>
                         </div>
                     </div>
