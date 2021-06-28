@@ -4,18 +4,18 @@
     <div class="section-body">
     <div class="row">
         <div class="col-12">
-        <div class="card">
+        <div class="card">c
             <div class="card-header">
-            <h4>Daftar Data Keluarga Dusun Batur</h4>
+            <h4>Daftar Dusun</h4>
             </div>
-                                <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Daftar Dusun</label>
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" placeholder="Jenis Kelamin"> -->
                             <select class="form-control select2" id="jenis_kelamin" name="jenis_kelamin" placeholder="Jenis Kelamin" required>
-                                <option value selected="selected">-- Jenis Kelamin --</option>    
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
+                                <option value selected="selected">-- Dusun --</option>
+                                <option>Dusun Gegersapi</option>
+                                <option>Dusun Depok</option>
+                                <option>Dusun Sampung</option>
+                                <option>Dusun Batur</option>
                             </select>
                         </div>
             <div class="card-body">

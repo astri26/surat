@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Keluarga;
+use DB;
 use App\Penduduk;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,7 @@ class KeluargaController extends Controller
     public function index()
     {
         $keluarga = Keluarga::all();
-        $penduduk = Penduduk::all();
-        return view('keluarga.index', compact('keluarga','penduduk'));
+        return view('keluarga.index', compact('keluarga'));
     }
     /**
      * Show the form for creating a new resource.
@@ -26,8 +26,8 @@ class KeluargaController extends Controller
      */
     public function create()
     {
-        $penduduk = Penduduk::all();
-        return view('keluarga.create', compact('penduduk'));
+        $keluarga = Keluarga::all();
+        return view('keluarga.create', compact('keluarga'));
     }
 
     /**
@@ -38,12 +38,27 @@ class KeluargaController extends Controller
      */
     public function store(Request $request)
     {
-        Keluarga::create([
-            'penduduk_id' => $request->id_penduduk,
-            'dusun' => $request->dusun,
-            'rt' => $request->rt,
-            'rw' => $request->rw
+        $request->validate([
+            'no_kk' => 'required',
+            'nama_kk' => 'required',
+            'dusun' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
         ]);
+        $keluarga = new keluarga();
+        $keluarga->no_kk = $request->no_kk;
+        $keluarga->nama_kk = $request->nama_kk;
+        $keluarga->dusun = $request->dusun;
+        $keluarga->rt = $request->rt;
+        $keluarga->rw = $request->rw;
+        $keluarga->save();
+        // Keluarga::create([
+        //     'rt' => $request->no_kk,
+        //     'nama_kk' => $request->nama_kk,
+        //     'dusun' => $request->dusun,
+        //     'rt' => $request->rt,
+        //     'rw' => $request->rw
+        // ]);
         return redirect('/keluarga')->with(['success' => 'Data Keluarga Berhasil Ditambahkan!']);
     }
 
@@ -66,9 +81,8 @@ class KeluargaController extends Controller
      */
     public function edit(Keluarga $keluarga)
     {
-        $keluarga = Keluarga::find($keluarga->id_keluarga);
-        $penduduk = Penduduk::all();
-        return view('keluarga.update', compact('keluarga','penduduk'));
+        $keluarga = Keluarga::find($keluarga->no_kk);
+        return view('keluarga.update', compact('keluarga'));
     }
 
     /**
@@ -80,9 +94,9 @@ class KeluargaController extends Controller
      */
     public function update(Request $request, Keluarga $keluarga)
     {
-        Keluarga::where('id_keluarga', $keluarga->id_keluarga)
+        Keluarga::where('no_kk',$keluarga->no_kk)
             ->update([
-                'penduduk_id' => $request->id_penduduk,
+                'nama_kk' => $request->nama_kk,
                 'dusun' => $request->dusun,
                 'rt' => $request->rt,
                 'rw' => $request->rw
@@ -98,7 +112,18 @@ class KeluargaController extends Controller
      */
     public function destroy(Keluarga $keluarga)
     {
-        Keluarga::destroy($keluarga->id_keluarga);
+        Keluarga::destroy($keluarga->no_kk);
         return redirect('/keluarga')->with(['success' => 'Data Keluarga Berhasil Dihapus!']);
     }
+    // public function getDataPenduduk(Request $request)
+    // {
+    //     $penduduk = Penduduk::where([
+    //         'id_penduduk' => $request->id
+    //     ])->first();
+
+    //     $data['status'] = 'ok';
+    //     $data['result'] = array('nama' => $penduduk->nama, 'alamat' => $penduduk->alamat);
+
+    //     return json_encode($data);
+    // }
 }

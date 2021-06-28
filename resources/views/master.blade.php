@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="{{url('otika/assets/css/components.css')}}">
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{{url('otika/assets/css/custom.css')}}">
-  <link rel='shortcut icon' type='image/x-icon' href="{{url('otika/assets/img/favicon.ico')}}"/>
+  <link rel='shortcut icon' type='image/x-icon' href="{{url('otika/assets/img/kopsurat.png')}}"/>
 
 
   <link rel="stylesheet" href="{{url('otika/assets/bundles/select2/dist/css/select2.min.css')}}">
@@ -49,67 +49,6 @@
         </div>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-              class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
-              <span class="badge headerBadge1">
-                6 </span> </a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
-              <div class="dropdown-header">
-                Messages
-                <div class="float-right">
-                  <a href="#">Mark All As Read</a>
-                </div>
-              </div>
-              <div class="dropdown-list-content dropdown-list-message">
-                <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-											text-white"> <img alt="image" src="{{url('otika/assets/img/users/user-1.png')}}" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">John
-                      Deo</span>
-                    <span class="time messege-text">Please check your mail !!</span>
-                    <span class="time">2 Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="{{url('otika/assets/img/users/user-2.png')}}" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
-                      Smith</span> <span class="time messege-text">Request for leave
-                      application</span>
-                    <span class="time">5 Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="{{url('otika/assets/img/users/user-5.png')}}" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
-                      Ryan</span> <span class="time messege-text">Your payment invoice is
-                      generated.</span> <span class="time">12 Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="{{url('otika/assets/img/users/user-4.png')}}" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
-                      Smith</span> <span class="time messege-text">hii John, I have upload
-                      doc
-                      related to task.</span> <span class="time">30
-                      Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="{{url('otika/assets/img/users/user-3.png')}}" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
-                      Joshi</span> <span class="time messege-text">Please do as specify.
-                      Let me
-                      know if you have any query.</span> <span class="time">1
-                      Days Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="{{url('otika/assets/img/users/user-2.png')}}" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
-                      Smith</span> <span class="time messege-text">Client Requirements</span>
-                    <span class="time">2 Days Ago</span>
-                  </span>
-                </a>
-              </div>
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
-          </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
               class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
             </a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
@@ -127,49 +66,27 @@
                     available now! <span class="time">2 Min
                       Ago</span>
                   </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i class="far
-												fa-user"></i>
-                  </span> <span class="dropdown-item-desc"> <b>You</b> and <b>Dedik
-                      Sugiharto</b> are now friends <span class="time">10 Hours
-                      Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-success text-white"> <i
-                      class="fas
-												fa-check"></i>
-                  </span> <span class="dropdown-item-desc"> <b>Kusnaedi</b> has
-                    moved task <b>Fix bug header</b> to <b>Done</b> <span class="time">12
-                      Hours
-                      Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-danger text-white"> <i
-                      class="fas fa-exclamation-triangle"></i>
-                  </span> <span class="dropdown-item-desc"> Low disk space. Let's
-                    clean it! <span class="time">17 Hours Ago</span>
-                  </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i class="fas
 												fa-bell"></i>
                   </span> <span class="dropdown-item-desc"> Welcome to Desa Bibrik
                     template! <span class="time">Yesterday</span>
                   </span>
                 </a>
-              </div>
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
+
             </div>
           </li>
-          <li class="dropdown"><a href="#" data-toggle="dropdown"
-              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{{url('otika/assets/img/user.png')}}"
+          {{-- <li class="dropdown"><a href="#" data-toggle="dropdown"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
-            <div class="dropdown-menu dropdown-menu-right pullDown">
-              <div class="dropdown-title">Hello Sarah Smith</div>
+            <div class="dropdown-menu dropdown-menu-right pullDown"> --}}
+              {{-- <div class="dropdown-title">Hello Sarah Smith</div>
               <a href="profile.html" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile
               </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
                 Activities
               </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                 Settings
-              </a>
+              </a> --}}
               <div class="dropdown-divider"></div>
               <a  href="{{ route('logout') }}" onclick="event.preventDefault();
               document.getElementById('logout-form').submit();" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
@@ -185,65 +102,41 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"> <img alt="image" src="{{url('otika/assets/img/logo.png')}}" class="header-logo" /> <span
-                class="logo-name">Desa Bibrik</span>
+            <a href="index.html"> <img alt="image" src="{{url('otika/assets/img/kopsurat.png')}}" class="header-logo" />
+                <span><a class="logo-name" href="{{url('/home')}}">Desa Bibrik</a></span>
             </a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Data Master</li>
             <li class="dropdown">
-              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+              <a href="{{url('/home')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>Data Kependudukan</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{url('/penduduk')}}">Data Penduduk</a></li>
+                  <li><a class="nav-link" href="{{url('/keluarga')}}">Data Keluarga</a></li>
               </ul>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{url('/keluarga')}}">Data Keluarga</a></li>
-              </ul>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{url('/dusun')}}">Data Dusun</a></li>
+                    <li><a class="nav-link" href="{{url('/penduduk')}}">Data Penduduk</a></li>
               </ul>
             </li>
             <li class="menu-header">Surat</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Daftar Surat</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="alert.html">Surat Keterangan </a></li>
-                <li><a class="nav-link" href="badge.html">Surat Keterangan Pindah</a></li>
-                <li><a class="nav-link" href="breadcrumb.html">Surat Kematian</a></li>
-                <li><a class="nav-link" href="buttons.html">Buttons</a></li>
-                <li><a class="nav-link" href="collapse.html">Collapse</a></li>
-                <li><a class="nav-link" href="dropdown.html">Dropdown</a></li>
-                <li><a class="nav-link" href="checkbox-and-radio.html">Checkbox &amp; Radios</a></li>
-                <li><a class="nav-link" href="list-group.html">List Group</a></li>
-                <li><a class="nav-link" href="media-object.html">Media Object</a></li>
-                <li><a class="nav-link" href="navbar.html">Navbar</a></li>
-                <li><a class="nav-link" href="pagination.html">Pagination</a></li>
-                <li><a class="nav-link" href="popover.html">Popover</a></li>
-                <li><a class="nav-link" href="progress.html">Progress</a></li>
-                <li><a class="nav-link" href="tooltip.html">Tooltip</a></li>
-                <li><a class="nav-link" href="flags.html">Flag</a></li>
-                <li><a class="nav-link" href="typography.html">Typography</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="shopping-bag"></i><span>Buat Surat</span></a>
+                  data-feather="briefcase"></i><span>Data Surat</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="avatar.html">Avatar</a></li>
-                <li><a class="nav-link" href="card.html">Card</a></li>
-                <li><a class="nav-link" href="modal.html">Modal</a></li>
-                <li><a class="nav-link" href="sweet-alert.html">Sweet Alert</a></li>
-                <li><a class="nav-link" href="toastr.html">Toastr</a></li>
-                <li><a class="nav-link" href="empty-state.html">Empty State</a></li>
-                <li><a class="nav-link" href="multiple-upload.html">Multiple Upload</a></li>
-                <li><a class="nav-link" href="pricing.html">Pricing</a></li>
-                <li><a class="nav-link" href="tabs.html">Tab</a></li>
+                  <li><a class="nav-link" href="{{url('/surat')}}">Buat Surat</a></li>
               </ul>
-            </li>
+              <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{url('/template')}}">Template</a></li>
+              </ul>
+            <li class="dropdown">
+                <a href="{{url('/history')}}" class="nav-link"><i data-feather="shopping-bag"></i><span>History</span></a>
+              </li>
+              <!-- <li class="dropdown">
+                <a href="{{url('/history')}}" class="nav-link"><i data-feather="shopping-bag"></i><span>Arsip Surat</span></a>
+              </li> -->
             {{-- <li class="menu-header">Media</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="image"></i><span>Gallery</span></a>

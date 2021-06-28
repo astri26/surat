@@ -15,8 +15,8 @@ class CreatePendudukTable extends Migration
     {
         Schema::create('penduduk', function (Blueprint $table) {
             $table->increments('id_penduduk');
-            $table->integer('no_kk');
-            $table->integer('nik');
+            $table->string('no_kk', 16);
+            $table->string('nik', 16);
             $table->string('nama');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');

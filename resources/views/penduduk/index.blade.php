@@ -35,12 +35,13 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
-                    <th>Alamat</th>
+                    <!-- <th>Alamat</th> -->
                     <th>Agama</th>
                     <th>Status Perkawinan</th>
                     <th>Status Hubungan</th>
                     <th>Pekerjaan</th>
                     <th>Kewarganegaraan</th>
+                    <th>Pendidikan</th>
                     <th>Aksi</th>
                     </tr>
                 </thead>
@@ -52,17 +53,18 @@
                     <td>{{ $pndk->nik }}</td>
                     <td>{{ $pndk->nama }}</td>
                     <td>{{ $pndk->tempat_lahir }}</td>
-                    <td>{{ $pndk->tanggal_lahir }}</td>
+                    <td>{{ Carbon\Carbon::parse($pndk->tanggal_lahir ?? '')->translatedFormat('d F Y') }}</td>
                     <td>{{ $pndk->jenis_kelamin }}</td>
-                    <td>{{ $pndk->alamat }}</td>
+                    <!-- <td>{{ $pndk->alamat }}</td> -->
                     <td>{{ $pndk->agama }}</td>
                     <td>{{ $pndk->status_perkawinan }}</td>
                     <td>{{ $pndk->status_hubungan }}</td>
                     <td>{{ $pndk->pekerjaan }}</td>
                     <td>{{ $pndk->kewarganegaraan }}</td>
+                    <td>{{ $pndk->pendidikan }}</td>
                     <td>
-                        <a href="{{ url('/penduduk/'.$pndk->id_penduduk.'/edit') }}" class="on-default edit-row btn btn-primary" ><i class="fa fa-edit"></i></a>
-                        <form action="{{ url('/penduduk/'.$pndk->id_penduduk) }}" method="post" class="d-inline">
+                        <a href="{{ url('/penduduk/'.$pndk->nik.'/edit') }}" class="on-default edit-row btn btn-primary" ><i class="fa fa-edit"></i></a>
+                        <form action="{{ url('/penduduk/'.$pndk->nik) }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
                             <button class="on-default edit-row btn btn-danger" onclick="return confirm('Apakah anda yakin akan menghapus nya?');" ><i class="fa fa-trash"></i></button>
@@ -80,7 +82,7 @@
     </div>
 </section>
 <div class="settingSidebar">
-    <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
+    <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-ug"></i>
     </a>
     <div class="settingSidebar-body ps-container ps-theme-default">
     <div class=" fade show active">

@@ -9,58 +9,22 @@
                     <h4>Update Data Keluarga</h4>
                 </div>
                 <div class="card-body">
-                <form action="{{url('/keluarga/'.$keluarga->id_keluarga)}}" method="post">
+                <form action="{{url('/keluarga/'.$keluarga->no_kk)}}" method="post">
                     @csrf
                     @method('patch')
-                    <input type="hidden" name="id_keluarga" id="id_keluarga">
-                    <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">No. KK</label>
-                        <div class="col-sm-12 col-md-7">
-                            {{-- <input type="number" class="form-control" id="no_kk" name="no_kk" placeholder="No KK" value="{{ $keluarga->no_kk }}" required> --}}
-                            <select class="form-control select2" id="id_penduduk" name="id_penduduk"  required>
-                                <option value selected="selected">-- Pilih No.KK --</option>
-                                @foreach ($penduduk as $pndk)
-                                    <option value="{{$pndk->id_penduduk}}"
-                                    @if ($pndk->id_penduduk == $keluarga->penduduk_id)
-                                        selected
-                                    @endif
-                                    >{{$pndk->no_kk}}</option>
-                                @endforeach
-                            </select>
+                    <input type="hidden" name="no_kk" id="no_kk">
+                        <div class="form-group row mb-4">
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nomor KK</label>
+                            <div class="col-sm-12 col-md-7">
+                                <input type="text" class="form-control" id="no_kk" name="no_kk" placeholder="Nomor KK"  value="{{$keluarga->no_kk}}" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NIK</label>
-                        <div class="col-sm-12 col-md-7">
-                            {{-- <input type="number" class="form-control" id="nik" name="nik" placeholder="NIK" value="{{ $penduduk->nik }}" required> --}}
-                            <select class="form-control select2" id="id_penduduk" name="id_penduduk"  required>
-                                <option value selected="selected">-- Pilih NIK --</option>
-                                @foreach ($penduduk as $pndk)
-                                    <option value="{{$pndk->id_penduduk}}"
-                                    @if ($pndk->id_penduduk == $keluarga->penduduk_id)
-                                        selected
-                                    @endif
-                                    >{{$pndk->nik}}</option>
-                                @endforeach
-                            </select>
+                        <div class="form-group row mb-4">
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama</label>
+                            <div class="col-sm-12 col-md-7">
+                                <input type="text" class="form-control" id="nama_kk" name="nama_kk" placeholder="Nama" value="{{ $keluarga->nama_kk }}"required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama</label>
-                        <div class="col-sm-12 col-md-7">
-                            {{-- <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="{{ $penduduk->nama }}" required> --}}
-                            <select class="form-control select2" id="id_penduduk" name="id_penduduk"  required>
-                                <option value selected="selected">-- Pilih No.KK --</option>
-                                @foreach ($penduduk as $pndk)
-                                    <option value="{{$pndk->id_penduduk}}"
-                                    @if ($pndk->id_penduduk == $keluarga->penduduk_id)
-                                        selected
-                                    @endif
-                                    >{{$pndk->nama}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Dusun</label>
                         <div class="col-sm-12 col-md-7">

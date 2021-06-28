@@ -12,41 +12,45 @@
                 <form action="{{url('/penduduk')}}" method="post">
                     @csrf
                     <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">No. KK</label>
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nomor KK</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="number" class="form-control" id="no_kk" name="no_kk" placeholder="No KK" required>
-
+                            <select class="form-control select2" id="no_kk" name="no_kk"  value="{{old('nama_kk')}}"placeholder="Nomor KK" required>
+                                <option value selected="selected">-- Nomor KK --</option>
+                                @foreach ($keluarga as $klrg)
+                                    <option value="{{ $klrg->no_kk }}">{{ $klrg->no_kk }} - {{ $klrg->nama_kk }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NIK</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="number" class="form-control" id="nik" name="nik" placeholder="NIK" required>
+                            <input type="number" min_lenght="16" class="form-control" id="nik" name="nik" placeholder="NIK" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{old('nama')}}" placeholder="Nama" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tempat Lahir</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat Lahir" required>
+                            <input type="text" class="form-control" id="tempat_lahir" value="{{old('tempat_lahir')}}" name="tempat_lahir" placeholder="Tempat Lahir" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal Lahir</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" required>
+                            <input type="date" class="form-control" id="tanggal_lahir" value="{{old('tanggal_lahir')}}" name="tanggal_lahir" placeholder="Tanggal Lahir" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jenis Kelamin</label>
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" placeholder="Jenis Kelamin"> -->
-                            <select class="form-control select2" id="jenis_kelamin" name="jenis_kelamin" placeholder="Jenis Kelamin" required>
+                            <select class="form-control select2" id="jenis_kelamin" name="jenis_kelamin" value="{{old('jenis_kelamin')}}" placeholder="Jenis Kelamin" required>
                                 <option value selected="selected">-- Jenis Kelamin --</option>
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Perempuan">Perempuan</option>
@@ -54,17 +58,27 @@
                         </div>
                     </div>
                     <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Alamat</label>
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Ibu</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" required>
+                            <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" value="{{old('nama_ibu')}}" placeholder="Nama Ibu" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Ayah</label>
+                        <div class="col-sm-12 col-md-7">
+                            <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" placeholder="Nama Ayah" value="{{old('nama_ayah')}}" required>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Alamat</label>
+                        <div class="col-sm-12 col-md-7">
+                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{old('alamat')}}"placeholder="Alamat" required>
+                        </div>
+                    </div> -->
+                    <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Agama</label>
                         <div class="col-sm-12 col-md-7">
-                            <!-- <input type="text" class="form-control" id="agama" name="agama" placeholder="Agama"> -->
-
-                            <select class="form-control select2" id="agama" name="agama" placeholder="Agama" required>
+                            <select class="form-control select2" id="agama" name="agama" value="{{old('agama')}}"placeholder="Agama" required>
                                 <option value selected="selected">-- Agama --</option>
                                 <option value="Islam">Islam</option>
                                 <option value="Kristen">Kristen</option>
@@ -78,7 +92,7 @@
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status Perkawinan</label>
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="status_perkawinan" name="status_perkawinan" placeholder="Status Perkawinan"> -->
-                            <select class="form-control select2" id="status_perkawinan" name="status_perkawinan" placeholder="Status Perkawinan" required>
+                            <select class="form-control select2" id="status_perkawinan" name="status_perkawinan" value="{{old('status_perkawinan')}}"placeholder="Status Perkawinan" required>
                                 <option value selected="selected">-- Status Perkawinan --</option>
                                 <option value="Kawin">Kawin</option>
                                 <option value="Belum Kawin">Belum Kawin</option>
@@ -89,7 +103,7 @@
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status Hubungan</label>
                         <div class="col-sm-12 col-md-7">
                             <!-- <input type="text" class="form-control" id="status_hubungan" name="status_hubungan" placeholder="Status Hubungan"> -->
-                            <select class="form-control select2" id="status_hubungan" name="status_hubungan" placeholder="Status Hubungan" required>
+                            <select class="form-control select2" id="status_hubungan" name="status_hubungan" value="{{old('status_hubungan')}}"placeholder="Status Hubungan" required>
                                 <option value selected="selected">-- Status Hubungan --</option>
                                 <option value="Kepala-Keluarga">Kepala Keluarga</option>
                                 <option value="Suami">Suami</option>
@@ -108,13 +122,32 @@
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pekerjaan</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="Pekerjaan" required>
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="{{old('pekerjaan')}}" placeholder="Pekerjaan" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kewarganegaraan</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="text" class="form-control" id="kewarganegaraan" name="kewarganegaraan" placeholder="Kewarganegaraan" required>
+                            <input type="text" class="form-control" id="kewarganegaraan" name="kewarganegaraan" value="{{old('kewarganegaraan')}}" placeholder="Kewarganegaraan" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pendidikan</label>
+                        <div class="col-sm-12 col-md-7">
+                            <select class="form-control select2" id="pendidikan" name="pendidikan" value="{{old('pendidikan')}}" placeholder="Pendidikan" required>
+                                <option value selected="selected">-- Pendidikan --</option>
+                                <option value="Tidak Sekolah">Tidak Sekolah</option>
+                                <option value="SD Sederajat">SD Sederajat</option>
+                                <option value="SLTP Sederajat">SLTP Sederajat</option>
+                                <option value="SLTA Sederajat">SLTA Sederajat</option>
+                                <option value="Diploma I">Diploma I</option>
+                                <option value="Diploma II">Diploma II</option>
+                                <option value="Diploma III">Diploma III</option>
+                                <option value="Diploma III">Diploma III</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="S3">S3</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row mb-4">

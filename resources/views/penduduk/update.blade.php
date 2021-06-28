@@ -9,10 +9,10 @@
                     <h4>Update Data Penduduk</h4>
                 </div>
                 <div class="card-body">
-                <form action="{{url('/penduduk/'.$penduduk->id_penduduk)}}" method="post">
+                <form action="{{url('/penduduk/'.$penduduk->nik)}}" method="post">
                     @csrf
                     @method('patch')
-                    <input type="hidden" name="id_penduduk" id="id_penduduk">
+                    <input type="hidden" name="nik" id="nik">
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">No. KK</label>
                         <div class="col-sm-12 col-md-7">
@@ -53,6 +53,18 @@
                                 <option value="Laki-laki" {{ $penduduk->jenis_kelamin == 'Laki-laki' ? 'selected' : '' }} >Laki-laki</option>
                                 <option value="Perempuan" {{ $penduduk->jenis_kelamin == 'Perempuan' ? 'selected' : '' }} >Perempuan</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Ibu</label>
+                        <div class="col-sm-12 col-md-7">
+                            <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" placeholder="Nama Ibu"  value="{{ $penduduk->nama_ibu }}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Ayah</label>
+                        <div class="col-sm-12 col-md-7">
+                            <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" placeholder="Nama Ayah"  value="{{ $penduduk->nama_ayah }}" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
@@ -117,6 +129,25 @@
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kewarganegaraan</label>
                         <div class="col-sm-12 col-md-7">
                             <input type="text" class="form-control" id="kewarganegaraan" name="kewarganegaraan" placeholder="Kewarganegaraan" value="{{ $penduduk->kewarganegaraan }}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pendidikan</label>
+                        <div class="col-sm-12 col-md-7">
+                            <select class="form-control select2" id="pendidikan" name="pendidikan" placeholder="Pendidikan" required>
+                                <option value selected="selected">-- Pendidikan --</option>
+                                <option value="Tidak Sekolah">Tidak Sekolah</option>
+                                <option value="SD Sederajat">SD Sederajat</option>
+                                <option value="SLTP Sederajat">SLTP Sederajat</option>
+                                <option value="SLTA Sederajat">SLTA Sederajat</option>
+                                <option value="Diploma I">Diploma I</option>
+                                <option value="Diploma II">Diploma II</option>
+                                <option value="Diploma III">Diploma III</option>
+                                <option value="Diploma III">Diploma III</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="S3">S3</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row mb-4">

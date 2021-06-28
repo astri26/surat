@@ -30,7 +30,6 @@
                                     <tr>
                                     <th>No</th>
                                     <th>No KK</th>
-                                    <th>NIK</th>
                                     <th>Nama</th>
                                     <th>Dusun</th>
                                     <th>RT</th>
@@ -42,15 +41,15 @@
                                     @foreach($keluarga as $klrg)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $klrg->penduduk->no_kk }}</td>
-                                        <td>{{ $klrg->penduduk->nik }}</td>
-                                        <td>{{ $klrg->penduduk->nama }}</td>
+                                        <td>{{ $klrg->no_kk }}</td>
+                                        <td>{{ $klrg->nama_kk }}</td>
                                         <td>{{ $klrg->dusun }}</td>
                                         <td>{{ $klrg->rt }}</td>
                                         <td>{{ $klrg->rw }}</td>
                                         <td>
-                                            <a href="{{ url('/keluarga/'.$klrg->id_keluarga.'/edit') }}" class="on-default edit-row btn btn-primary" ><i class="fa fa-edit"></i></a>
-                                            <form action="{{ url('/keluarga/'.$klrg->id_keluarga) }}" method="post" class="d-inline">
+                                           <a href="{{ url('penduduk/'.$klrg->no_kk) }}" class="on-default edit-row btn btn-warning" ><i class="far fa-eye"></i></a>
+                                            <a href="{{ url('/keluarga/'.$klrg->no_kk.'/edit') }}" class="on-default edit-row btn btn-primary" ><i class="fa fa-edit"></i></a>
+                                            <form action="{{ url('/keluarga/'.$klrg->no_kk) }}" method="post" class="d-inline">
                                                 @method('delete')
                                                 @csrf
                                                 <button class="on-default edit-row btn btn-danger" onclick="return confirm('Apakah anda yakin akan menghapus nya?');" ><i class="fa fa-trash"></i></button>

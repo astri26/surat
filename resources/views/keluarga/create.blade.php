@@ -12,57 +12,33 @@
                 <form action="{{url('/keluarga')}}" method="post">
                     @csrf
                     <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">No. KK</label>
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nomor KK</label>
                         <div class="col-sm-12 col-md-7">
-                            {{-- <input type="number" class="form-control" id="no_kk" name="no_kk" placeholder="No KK" required> --}}
-                            <select class="form-control select2" placeholder="-- Select No.KK --" id="id_penduduk" name="id_penduduk"  required>
-                                <option value selected="selected">-- No.KK --</option>
-                                @foreach ($penduduk as $pndk)
-                                    <option value="{{$pndk->id_penduduk}}">{{$pndk->no_kk}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NIK</label>
-                        <div class="col-sm-12 col-md-7">
-                            {{-- <input type="number" class="form-control" id="nik" name="nik" placeholder="NIK" required> --}}
-                            <select class="form-control select2" placeholder="-- Select NIK --" id="id_penduduk" name="id_penduduk"  required>
-                                <option value selected="selected">-- NIK --</option>
-                                @foreach ($penduduk as $pndk)
-                                    <option value="{{$pndk->id_penduduk}}">{{$pndk->nik}}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" class="form-control" id="no_kk" name="no_kk" value="{{old('no_kk')}}" placeholder="Nomor KK" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama</label>
                         <div class="col-sm-12 col-md-7">
-                            {{-- <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required> --}}
-                            <select class="form-control select2" placeholder="-- Nama --" id="id_penduduk" name="id_penduduk"  required>
-                                <option value selected="selected">-- Nama --</option>
-                                @foreach ($penduduk as $pndk)
-                                    <option value="{{$pndk->id_penduduk}}">{{$pndk->nama}}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" class="form-control" id="nama_kk" name="nama_kk" value="{{old('nama_kk')}}" placeholder="Nama" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Dusun</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="text" class="form-control" id="dusun" name="dusun" placeholder="Dusun" required>
+                            <input type="text" class="form-control" id="dusun" name="dusun" value="{{old('dusun')}}" placeholder="Dusun" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">RT</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="number" class="form-control" id="rt" name="rt" placeholder="RT" required>
+                            <input type="number" class="form-control" id="rt" name="rt" value="{{old('rt')}}" placeholder="RT" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">RW</label>
                         <div class="col-sm-12 col-md-7">
-                            <input type="number" class="form-control" id="rw" name="rw" placeholder="RW" required>
+                            <input type="number" class="form-control" id="rw" name="rw" value="{{old('rw')}}" placeholder="RW" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
@@ -78,5 +54,20 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    function setInput(result) {
+        var value = result.value;
+
+        $.ajax({
+            url: '{{ url('/keluarga/get-data/') }}',
+            type: 'post',
+            data: '_token={{ csrf_token() }}&id=' + value,
+            dataType: 'JSON',
+            success: function(response){
+                document.getElementById('nama').value = response.result.nama;
+            }
+        })
+    }
+</script>
 
 @endsection

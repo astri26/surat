@@ -1,0 +1,181 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Penduduk;
+use App\Surat;
+use Illuminate\Http\Request;
+
+class SbelumkawinController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $penduduk = Penduduk::all();
+        return view('surat.indexsbelumkawin', compact('penduduk'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $detailWarga = Penduduk::where('nik', $request->nama)->first();
+        $surat = surat::where('tipe_surat', "Keterangan Belum Kawin")->latest('no_surat')->first();
+        $awal = date_create($detailWarga->tanggal_lahir);
+        $akhir = date_create();
+        $diff  = date_diff($awal, $akhir);
+        $tglberlaku = date('Y-m-d', strtotime('+1 month', strtotime( $request->tanggal_surat )));
+        // dd($tglberlaku);
+        if($surat == null){
+            $no_surat = 0;
+        }else{
+            $no_surat = $surat->no_surat;
+        }
+
+        Surat::create([
+            'nik' => $detailWarga->nik,
+            'nama_warga' => $detailWarga->nama,
+            'tipe_surat' =>'Kematian',
+            // 'no_surat' => $surat->no_surat + 1,
+            // 'tempat_lahir' => $request->tempat_lahir,
+            // 'tanggal_lahir' => $request->tanggal_lahir,
+            // 'hari' => $request->hari,
+            // 'umur' => $diff->y,
+            'tanggal_surat' => $request->tanggal_surat,
+            'tanggal_berlaku' => $tglberlaku,
+            // 'tanggal_meninggal' => $request->tanggal_meninggal,
+            // 'tgl' => $request->tgl,
+            // 'jenis_kelamin'=>$request->jeniskelamin,
+            // 'status_perkawinan'=>$request->status_perkawinan,
+            // 'agama'=>$request->agama,
+            // 'alamat'=>$request->alamat,
+            // 'lokasi'=>$request->lokasi,
+            // 'penghasilan'=>$request->penghasilan,
+            // 'keterangan'=>$request->keterangan,
+        ]);
+        
+        return view('template.templatebelumkawin', [
+            'nama_warga' => $detailWarga->nama,
+            'tempat_lahir' => $request->tempat_lahir,
+            // 'no_surat' => $surat->no_surat + 1,
+            'tanggal_surat' => $request->tanggal_surat,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'tanggal_berlaku' => $tglberlaku,
+            'nik' => $request->nik,
+            'umur' => $diff->y,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'status_perkawinan'=> $request->status_perkawinan,
+            'agama' => $request->agama,
+            'pekerjaan' => $request->pekerjaan,
+            'alamat' => $request->alamat,
+            'keperluan' => $request->keperluan,
+            'pendidikan' => $request->pendidikan,
+            'kewarganegaraan' => $request->kewarganegaraan,
+            'penghasilan' => $request->penghasilan,
+            'keterangan' => $request->keterangan,
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    public function tampilHistory($id_surat){
+        $detailSurat = Surat::where('id_surat', $id_surat)->first();
+            return view('template.templatebelumkawin', [
+                'nama_warga' => $detailSurat->nama_warga,
+                'tempat_lahir' => $detailSurat->tempat_lahir,
+                'tanggal_lahir' => $detailSurat->tanggal_lahir,
+                'nik' => $detailSurat->nik,
+                'umur' => $detailSurat->umur,
+                'tanggal_berlaku' => $detailSurat->tanggal_berlaku,
+                'jenis_kelamin' => $detailSurat->jenis_kelamin,
+                'status_perkawinan'=> $detailSurat->status_perkawinan,
+                'agama' => $detailSurat->agama,
+                'pekerjaan' => $detailSurat->pekerjaan,
+                'alamat' => $detailSurat->alamat,
+                'kewarganegaraan' =>$detailSurat->kewarganegaraan,
+                'pendidikan' =>$detailSurat->pendidikan,
+                'keperluan' => $detailSurat->keperluan,
+                'penghasilan' => $detailSurat->penghasilan,
+                'keterangan' => $detailSurat->keterangan,
+            ]);
+        }
+
+    public function getDataPenduduk(Request $request)
+    {
+        $penduduk = Penduduk::where([
+            'nik' => $request->id
+        ])->first();
+
+        $data['status'] = 'ok';
+        $data['result'] = array('tanggal_lahir' => $penduduk->tanggal_lahir,
+        'status_perkawinan' => $penduduk->status_perkawinan, 'tempat_lahir' => $penduduk->tempat_lahir,
+        'pendidikan' => $penduduk->pendidikan, 'agama' => $penduduk->agama, 'jenis_kelamin' => $penduduk->jenis_kelamin,
+        'pekerjaan' => $penduduk->pekerjaan, 'alamat' => $penduduk->alamat,
+        'keterangan' => $penduduk->keterangan, 'keperluan' => $penduduk->keperluan,
+    'kewarganegaraan' => $penduduk->kewarganegaraan, 'nik' => $penduduk->nik);
+
+        return json_encode($data);
+    }
+}
+
